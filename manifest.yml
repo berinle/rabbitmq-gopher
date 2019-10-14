@@ -1,0 +1,14 @@
+---
+applications:
+- name: gopher
+  memory: 128mb
+  routes:
+  - route: gopher.apps.pcfone.io
+  #random-route: true
+  env:
+    GOPACKAGENAME: myapp
+    RABBITMQ_HOSTNAME: your_hostname
+    RABBITMQ_USERNAME: username
+    RABBITMQ_PASSWORD: password
+    RABBITMQ_PORT: 5672
+
