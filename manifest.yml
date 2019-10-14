@@ -11,4 +11,6 @@ applications:
     RABBITMQ_USERNAME: username
     RABBITMQ_PASSWORD: password
     RABBITMQ_PORT: 5672
+    RABBITMQ_URI: amqp://guest:guest@localhost:5672/ 
+
 

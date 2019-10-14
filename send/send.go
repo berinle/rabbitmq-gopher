@@ -14,8 +14,9 @@ func failOnError(err error, msg string) {
 }
 
 func Send() {
-	var url = "amqp://" + os.Getenv("RABBITMQ_USERNAME") + ":" + os.Getenv("RABBITMQ_PASSWORD") + "@" + os.Getenv("RABBITMQ_HOSTNAME") + ":" + os.Getenv("RABBITMQ_PORT") + "/"
-	conn, err := amqp.Dial(url)
+	// var url = "amqp://" + os.Getenv("RABBITMQ_USERNAME") + ":" + os.Getenv("RABBITMQ_PASSWORD") + "@" + os.Getenv("RABBITMQ_HOSTNAME") + ":" + os.Getenv("RABBITMQ_PORT") + "/"
+	var fullURL = os.Getenv("RABBITMQ_URI")
+	conn, err := amqp.Dial(fullURL)
 	failOnError(err, "Failed to connect to RabbitMQ")
 	defer conn.Close()
 
